@@ -39,8 +39,8 @@ class StringManipulations {
      */
     substringBetweenMatches(subStr1, subStr2) {
         const result = this.string.substring(
-            string.lastIndexOf(subString1) + subString1.length,
-            string.lastIndexOf(subString2)
+            this.string.indexOf(subStr1) + subStr1.length,
+            this.string.lastIndexOf(subStr2)
         )
         
         return result
@@ -74,7 +74,7 @@ class StringManipulations {
     */
     fix_start(str1) {
         const prefix = str1[0]
-        const regex = new RegExp(prefix, 'g')
+        const regex = new RegExp(prefix, 'gi')
       
         const subString = str1.substring(1, str1.length)
         const result = subString.replace(regex, '*')
@@ -83,3 +83,5 @@ class StringManipulations {
     }
 
 }
+
+module.exports = StringManipulations
