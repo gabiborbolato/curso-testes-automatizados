@@ -1,5 +1,5 @@
 const locators = {
-    BUTTON: '[data-testid=add_skill+button]'
+    BUTTON: '[data-testid=add_skill_button]'
 }
 
 export default locators

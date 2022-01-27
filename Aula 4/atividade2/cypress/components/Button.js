@@ -1,9 +1,11 @@
 import loc from  '../support/locators'
 
 class Button {
-    clickAddSkill () {
-        cy.get(loc.BUTTON).click()
+    
+    AddSkill () {
+       return cy.get(loc.BUTTON)  
     }
+
 }
 
-export default Button;
+export default Button
