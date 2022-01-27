@@ -55,18 +55,18 @@ const App = () => {
         </h1>
       </header>
       <label htmlFor="input1">Skill Name</label>
-      <input id="input-skill-name" className='input1'></input>
+      <input id="input-skill-name" className='input1' data-testid="input_skill_name"></input>
 
       <label htmlFor="input1">Developers</label>
-      <input id="input-developers" className='input1'></input>
+      <input id="input-developers" className='input1' data-testid="input_developers"></input>
 
       <label htmlFor="input1">Technologies</label>
-      <input id="input-technologies" className='input1'></input>
+      <input id="input-technologies" className='input1' data-testid="input_technologies"></input>
 
       <label htmlFor="input1">Roles</label>
-      <input id="input-roles" className='input1'></input>
+      <input id="input-roles" className='input1' data-testid="input_roles"></input>
 
-      <button id="load-skills-button" className="button1" onClick={() => loadSkills()}>Add Skill</button>
+      <button id="load-skills-button" data-testid="add_skill_button" className="button1" onClick={() => loadSkills()}>Add Skill</button>
       {showSkills ? listSkills : ''}
     </div>
   );

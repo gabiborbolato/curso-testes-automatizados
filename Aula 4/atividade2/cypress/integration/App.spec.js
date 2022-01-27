@@ -1,13 +1,13 @@
-describe('App Developers Skills', () => {
+import Button from '../components/Button'
 
-    beforeEach(() => {
+describe('App Developers test', () => {
+
+    before(() => {
         cy.visit('http://localhost:3000/');
     });
 
-    it('should load skills list as the button is clicked', () => {
-        cy.get('#load-skills-button').click();
-        cy.get('li').should('be.visible');
-        cy.get('ul').should('be.visible');
+    it.only('should load skills list as the button is clicked', () => {
+        Button.clickAddSkill()
     });
     it('should load one skill after input and click search button', () => {
         cy.get('input').type('front-end');

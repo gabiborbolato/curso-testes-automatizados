@@ -20,6 +20,7 @@
     "jest": "^27.4.7"
   },
   "dependencies": {
+    "cypress": "^9.2.1",
     "jest-stare": "^2.3.0"
   },
   "jest": {
@@ -33,6 +34,9 @@
     "coverageReport": [
       "html"
     ],
-    "reporters": ["default", "jest-stare"]
+    "reporters": [
+      "default",
+      "jest-stare"
+    ]
   }
 }
