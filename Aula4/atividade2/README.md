@@ -47,8 +47,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 ## To run cypress
-1. cd Aula4/
+1. cd Aula4/atividade2
 2. npm i
-3. cd atividade2
-4. npm start
-5. npx cypress open
+3. npm start
+4. npx cypress open
