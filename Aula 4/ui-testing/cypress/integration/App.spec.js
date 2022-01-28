@@ -1,24 +1,12 @@
-describe('App Developers Skills', () => {
+import Button from '../components/Button'
 
-    beforeEach(() => {
+describe('App Developers test', () => {
+
+    before(() => {
         cy.visit('http://localhost:3000/');
     });
 
-    it('should load skills list as the button is clicked', () => {
-        cy.get('#load-skills-button').click();
-        cy.get('li').should('be.visible');
-        cy.get('ul').should('be.visible');
-    });
-    it('should load one skill after input and click search button', () => {
-        cy.get('input').type('front-end');
-        cy.get('#search-button').click();
-        cy.get('li').should('be.visible');
-        cy.contains('Skill Name: front-end');
-    });
-    it('should load one skill after input with custom command', () => {
-        cy.get('input').type('front-end');
-        cy.clickButton('Search');
-        cy.get('li').should('be.visible');
-        cy.contains('Skill Name: front-end');
+    it('User should be able to click on Add Skill', () => {
+        Button.AddSkill().click()
     });
 });
