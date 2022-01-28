@@ -1,11 +1,11 @@
-import loc from  '../support/locators'
+import loc from  '../support/locators';
 
 class Button {
     
-    AddSkill () {
-       return cy.get(loc.BUTTON)  
+    static assertAddSkillButtonExist() {
+       cy.get(loc.BUTTON).should('be.visible');
     }
 
 }
 
-export default Button
+export default Button;
