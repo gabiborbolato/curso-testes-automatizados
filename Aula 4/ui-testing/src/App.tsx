@@ -3,95 +3,73 @@ import './App.css';
 import { useState } from 'react';
 
 const App = () => {
+  const [skillsData, setSkillsData] = useState(
+    [
+      {
+        "skillName": "",
+        "developers": [],
+        "profile": {
+          "technologies": [],
+          "roles": [],
+        },
+      },
+    ]
+  );
 
-  const [skillData, setSkillData] = useState({
-    "skillName": "",
-    "developers": [],
-    "profile": {
-      "technologies": [],
-      "roles": []
-    }
-  });
-  const [skillsData, setSkillsData] = useState([{
-    "skillName": "",
-    "developers": [],
-    "profile": {
-      "technologies": [],
-      "roles": []
-    }
-  }]);
 
-  const [showSkill, setShowSkill] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
 
   let listSkills = skillsData.map((skill, index) =>
-      <ul key={index}>
-        <li>Skill Name: {skill.skillName}</li>
-        <li>Developers:
-          <ul>
+    <ul key={index}>
+      <li>Skill Name: {skill.skillName}</li>
+      <li>Developers:
+        <ul>
           <li>{skill.developers[0]}</li>
           <li>{skill.developers[1]}</li>
-          </ul>
-        </li>
-        <li>Technologies:
-          <ul>
+        </ul>
+      </li>
+      <li>Technologies:
+        <ul>
           <li>{skill.profile.technologies[0]}</li>
           <li>{skill.profile.technologies[1]}</li>
-          </ul>
-        </li>
-      </ul>);
+        </ul>
+      </li>
+    </ul>);
 
-  let name = <><h3>{skillData.skillName}</h3>
-    <ul>
-    <li>Skill Name: {skillData.skillName}</li>
-    <li>Developers:
-      <ul>
-        <li>{skillData.developers[0]}</li>
-        <li>{skillData.developers[1]}</li>
-      </ul>
-    </li>
-    <li>Technologies:
-      <ul>
-        <li>{skillData.profile.technologies[0]}</li>
-        <li>{skillData.profile.technologies[1]}</li>
-      </ul>
-    </li>
-  </ul></>;
-  
-  function loadSkill() {
-    setShowSkill(true);
-    setShowSkills(false);
-    fetch('https://61e4d942595afe00176e51cb.mockapi.io/api/v1/skill')
-        .then(response => response.json())
-      .then(data => {
-        setSkillData(data[0]);
-        });
-  }
   function loadSkills() {
-    setShowSkill(false);
-    setShowSkills(true);
+    setShowSkills(false);
+
     fetch('https://61e4d942595afe00176e51cb.mockapi.io/api/v1/skills')
-        .then(response => response.json())
+      .then(response => response.json())
       .then(data => {
         setSkillsData(data);
-        });
+      });
+    setShowSkills(true);
   }
 
   return (
-      <div className="App">
-        <header className="App-header">
-          <h1>
-            Developers App
-          </h1>
+    <div className="App">
+      <header className="App-header">
+        <h1>
+          Developers App
+        </h1>
       </header>
-      <label htmlFor="input1">Type the skill you would like to search</label>
-        <input id="input-skill" className='input1'></input>
-      <a id="search-button" className="button1" onClick={() => loadSkill()}>Search</a>
-        <a id="load-skills-button" className="button1" onClick={() => loadSkills()}>All Skills</a>
-          {showSkill? name : ''}
-          {showSkills? listSkills: ''}
+      <label htmlFor="input1">Skill Name</label>
+      <input id="input-skill-name" className='input1' data-testid="input_skill_name"></input>
+
+      <label htmlFor="input1">Developers</label>
+      <input id="input-developers" className='input1' data-testid="input_developers"></input>
+
+      <label htmlFor="input1">Technologies</label>
+      <input id="input-technologies" className='input1' data-testid="input_technologies"></input>
+
+      <label htmlFor="input1">Roles</label>
+      <input id="input-roles" className='input1' data-testid="input_roles"></input>
+
+      <button id="load-skills-button" data-testid="add_skill_button" className="button1" onClick={() => loadSkills()}>Add Skill</button>
+      {showSkills ? listSkills : ''}
     </div>
-    );
+  );
 }
 
 export default App;
