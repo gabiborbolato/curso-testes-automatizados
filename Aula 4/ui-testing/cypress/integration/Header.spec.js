@@ -3,7 +3,7 @@ import Header from '../components/Header';
 describe('Header test', () => {
 
     before(() => {
-        cy.visit('http://localhost:3000/');
+        cy.visitSite();
     });
 
     it('User should be able to see Header title', () => {

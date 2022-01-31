@@ -4,7 +4,7 @@ import List from '../components/List';
 describe('Form test', () => {
 
     before(() => {
-        cy.visit('http://localhost:3000/');
+        cy.visitSite();    
     });
 
     it('User should be able to type text in fields', () => {
