@@ -1,3 +1,8 @@
+# Trabalho feito por:
+Gabriela Borbolato Moreira
+Denis Vitor Bueno de Almeida
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
