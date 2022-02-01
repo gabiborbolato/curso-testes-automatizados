@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ubuntu-latest
+        os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
       - name: Setup node 16
@@ -39,7 +39,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: cypress-test
+      - name: Checkout
         uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v2
@@ -47,4 +47,3 @@ jobs:
           working-directory: ./Aula 4/ui-testing
           build: npm run build
           start: npm start
-
