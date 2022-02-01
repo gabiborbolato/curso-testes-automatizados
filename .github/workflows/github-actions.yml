@@ -32,10 +32,6 @@ jobs:
         run: npm run test
       - working-directory: ./Aula 4/ui-testing
         run: npm run build
-      - working-directory: ./Aula 4/ui-testing
-        run: npm install
-      - working-directory: ./Aula 4/ui-testing
-        run: npm run test
   cypress-run:
     runs-on: ubuntu-latest
     steps:
